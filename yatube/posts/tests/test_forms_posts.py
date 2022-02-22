@@ -1,4 +1,3 @@
-from email.mime import image
 import shutil
 import tempfile
 
@@ -89,7 +88,7 @@ class PostFormTests(TestCase):
                 image=Post.objects.first().image,
             ).exists()
         )
-        
+
     def test_create_post_guest(self):
         """Проверка создания поста
         неавторизованным пользователем.
