@@ -1,0 +1,9 @@
+<article>
+  <ul>
+    <li>
+      Автор: {{ post.author}}
+      <a href={% url 'posts:profile' post.author %}>
+        все посты пользователя</a>
+    </li>
+  </ul>      
+</article>

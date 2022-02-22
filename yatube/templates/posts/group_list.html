@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+  {{ group.title }}
+{% endblock %}
+{% block content %}
+  <h1>{{ group.title }}</h1>
+  <p>
+    {{ group.description }}
+  </p>
+  {% for post in page_obj %}
+    {% include 'includes/author_card.html' %}
+    {% include 'includes/post_card.html' %}
+    <a href="{% url 'posts:post_detail' post.pk %}">
+      подробная информация</a>
+    <br>  
+      <a href="{% url 'posts:group_list' post.group.slug %}">
+        все записи группы</a>
+    {% if not forloop.last %}<hr>{% endif %}
+  {% endfor %}
+  {% include 'includes/paginator.html' %}
+{% endblock %}
