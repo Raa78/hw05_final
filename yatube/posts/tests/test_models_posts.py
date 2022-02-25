@@ -126,7 +126,7 @@ class CommentModelTest(TestCase):
                 self.assertEqual(
                     comment._meta.get_field(field).verbose_name,
                     expected_value)
- 
+
     def test_help_text_comment(self):
         """Проверяем help_text в модели Comment."""
         comment = CommentModelTest.comment

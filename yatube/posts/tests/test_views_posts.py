@@ -279,7 +279,7 @@ class PostViewsTests(TestCase):
         )
 
     def test_follow_not_show_index(self):
-        """Новая запись пользователя не появляется 
+        """Новая запись пользователя не появляется
         в ленте тех, кто не подписан.
         """
         response = self.authorized_client_3.get(reverse(
