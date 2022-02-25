@@ -265,8 +265,7 @@ class PostViewsTests(TestCase):
 
     def test_follow_show_index(self):
         """Новая запись пользователя появляется
-        в ленте тех, кто на него подписан
-        и не появляется в ленте тех, кто не подписан.
+        в ленте тех, кто на него подписан.
         """
         self.authorized_client_2.get(reverse(
             'posts:profile_follow',
@@ -278,6 +277,11 @@ class PostViewsTests(TestCase):
             self.post,
             response.context.get('page_obj').object_list
         )
+
+    def test_follow_not_show_index(self):
+        """Новая запись пользователя не появляется 
+        в ленте тех, кто не подписан.
+        """
         response = self.authorized_client_3.get(reverse(
             'posts:follow_index'))
         self.assertNotIn(

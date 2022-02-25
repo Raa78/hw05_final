@@ -74,7 +74,7 @@ class Comment(models.Model):
         Post,
         on_delete=models.CASCADE,
         related_name='comments',
-        verbose_name='Комментарий',
+        verbose_name='Текст поста',
         help_text='Укажите пост',
     )
     author = models.ForeignKey(
@@ -123,6 +123,6 @@ class Follow(models.Model):
                     'user',
                     'author',
                 ],
-                name="unique_follow",
+                name='unique_follow',
             ),
         ]
