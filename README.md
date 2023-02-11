@@ -69,6 +69,3 @@ python manage.py migrate
 ```
 python manage.py runserver
 ```
-
-### Автор проекта
-Андрей Рубцов
